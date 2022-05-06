@@ -1,4 +1,4 @@
-//by Metamere
+//By Metamere
 //May 5th, 2022
 
 int c1x, c1y, c2x, c2y;
