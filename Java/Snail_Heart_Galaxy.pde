@@ -43,6 +43,7 @@ void draw() {
   x_map = map(cX, 0, width, 0, 20);
   phase = -frameCount*.15;
   theta = 0; xr2 = 0; yr2 = 0;
+  translate(w2,h2);
   while (theta < angle_limit*3 ){
 
     ratio = theta/angle_limit;
@@ -53,12 +54,12 @@ void draw() {
     stroke_weight = ratio*(.5*x_map + 5*shift*x_map); 
     if (theta < angle_limit){
       recursion_count = 0;
-      drawcircle(w2+xr, h2+yr, ratio*width*4, 2, interval, 25*(1-ratio), 10*(1-ratio));
+      drawcircle(xr, yr, ratio*width*4, 2, interval, 25*(1-ratio), 10*(1-ratio));
     }
     if (spiral_line == true && theta > 6 && theta < angle_limit2){
       strokeWeight(stroke_weight);
       stroke(hue,sat*.5,50+100*shift_sq-50*shift,15 + 50*shift_sq);
-      line(w2+xr,h2+yr,w2+xr2,h2+yr2);
+      line(xr,yr,xr2,yr2);
     }
     xr2 = xr;
     yr2 = yr;
